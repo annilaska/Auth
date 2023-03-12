@@ -2,13 +2,55 @@
 .loginBlock {
     height: 40%;
 
-    .form {
+    .registarForm {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         height: 20rem;
+
+        .hiddenImageInput {
+            display: none;
+        }
+        .addImageBlok {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            cursor: pointer;
+
+            .addImageText {
+                color: DarkGray;
+                &:hover {
+                    color: rgb(85, 85, 86);
+                }
+            }
+
+            .image {
+                width: 40px;
+                opacity: 0.5;
+                margin-right: 1rem;
+            }
+        }
+
+        .submitBtn {
+            width: 100px;
+            margin-top: 25px;
+        }
+    }
+
+    .loginForm {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 13rem;
+
+        .submitBtn {
+            width: 100px;
+            margin-top: 25px;
+        }
     }
 
     .loginLink {

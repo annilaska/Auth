@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import s from './HomePage.module.css';
+import './HomePage.scss';
 import { useAuth } from '../../hooks/useAuth'
 import Profile from '../profile/Profile';
 import { onAuthStateChanged } from 'firebase/auth'
@@ -36,11 +36,11 @@ const HomePage: React.FC = () => {
         <>
             <h2>Welcome to My App!</h2>
             <p>You need 
-                <NavLink className={s.loginLink} to={'/registar'}>
+                <NavLink className='loginLink' to={'/registar'}>
                     Sign up
                 </NavLink> to use this app.</p>
             <p>Already have an account? 
-                <NavLink className={s.loginLink} to={'/login'}>
+                <NavLink className='loginLink' to={'/login'}>
                     Login
                 </NavLink>
             </p>

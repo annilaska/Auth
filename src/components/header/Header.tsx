@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../hooks/reduxHooks";
 import { removeUser } from '../../store/slices/userSlice'
 import { signOut } from 'firebase/auth';
 import { auth } from '../../farebase'
+import './Header.scss'
 
 const Header: React.FC = () => {
 
@@ -20,8 +21,8 @@ const Header: React.FC = () => {
 
     return (
         <AppBar position="static">
-            <Toolbar>
-                <Typography sx={{ flexGrow: 1 }} onClick={() => navigate('/')} variant="h6" component="span" >
+            <Toolbar className='appBar'>
+                <Typography className='appBar_title' onClick={() => navigate('/')} variant="h6" component="div" >
                     My App
                 </Typography>
                 {isAuth && <Button color="inherit" onClick={handleClick}>Logout</Button>} 

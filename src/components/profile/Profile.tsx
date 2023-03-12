@@ -11,7 +11,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-
 //import { Contact } from './Contact';
 import { useAuth } from '../../hooks/useAuth'
 import { useCropName } from '../../hooks/useCropName'
@@ -32,7 +31,6 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }));
 
 const Profile: React.FC = () => {
-    //const classes = useProfileStyles()
     const [expanded, setExpanded] = useState(false);
 
     const handleExpandClick = () => {
@@ -45,10 +43,10 @@ const Profile: React.FC = () => {
         <>
             <h2>Welcom!</h2>
             <Container maxWidth="xs">
-                <Card sx={{ maxWidth: 345 }}>
-                    <CardHeader
+                <Card>
+                    <CardHeader 
                         avatar={
-                            <Avatar sx={{ bgcolor: '#3B52C4' }} aria-label="recipe">
+                            <Avatar sx={{ bgcolor: '#2569f0' }} aria-label="recipe">
                                 {useCropName(name)}
                             </Avatar>
                         }
@@ -60,6 +58,7 @@ const Profile: React.FC = () => {
                         title={name}
                     />
                     <CardMedia
+                        sx={{ height: '100%' }}
                         //@ts-ignore
                         image={image}
                         height="194"

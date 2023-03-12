@@ -3,7 +3,6 @@ import './Login.scss';
 import { useFormik } from 'formik';
 //import * as yup from 'yup';
 import { Button, TextField } from '@mui/material';
-import { useLoginFormStyles } from '../../muiStyles/muiStyles'
 import ava from '../../assets/user.png'
 
 
@@ -44,7 +43,7 @@ const LoginForm: React.FC<FormPropsType> = ({ title, onSubmit }) => {
   }
  
   return (
-      <form onSubmit={formik.handleSubmit} className='form'>
+      <form onSubmit={formik.handleSubmit} className={title === 'registar' ? 'registarForm' : 'loginForm'}>
         <TextField
           id="email"
           name="email"
@@ -84,17 +83,17 @@ const LoginForm: React.FC<FormPropsType> = ({ title, onSubmit }) => {
               id="image"
               type="file" 
               onChange={(e) => uploadImage(e)}
-              style={useLoginFormStyles.hiddenImageInput}
+              className="hiddenImageInput"
             />
-            <label style={useLoginFormStyles.addImageBlok} htmlFor="image">
-              <img style={useLoginFormStyles.image} src={ava} alt="avatar" />
-              <span>{uploading === '' ? 'add avata' : uploading}r</span>
+            <label className="addImageBlok" htmlFor="image">
+              <img className="image" src={ava} alt="avatar" />
+              <span className="addImageText">{uploading === '' ? 'add avatar' : uploading}</span>
             </label>
           </>
         }
 
         <Button 
-          style={useLoginFormStyles.button}
+          className="submitBtn"
           color="primary" 
           variant="contained" 
           type="submit">
